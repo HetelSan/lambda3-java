@@ -21,15 +21,7 @@ public class Program {
 		
 		double factor = 1.1;
 
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-		
-		// como a função tem somente uma linha, as chaves são opcionais e
-		// portanto podem ser retiradas conforme abaixo:
-		// Consumer<Product> cons = p -> p.setPrice(p.getPrice() * factor);
-
-		list.forEach(cons);
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 		
 		list.forEach(System.out::println);
 	}
